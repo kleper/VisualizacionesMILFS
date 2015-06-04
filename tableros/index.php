@@ -1,4 +1,7 @@
 <?php
+/*  La variable $url se utiliza para llamar la API, las demas variables se utilizan para cargar el contenido.
+*/
+
 	$url = "http://datos.labmde.org/api.php?id=25";
 	$JSON = file_get_contents($url);
 	$data = json_decode($JSON);
@@ -16,6 +19,9 @@
 	$i = 0;
 	$mensajes = array();
 	foreach ($ids as $id) {
+/*Aqui se llaman los campos especificos y se nombran para usuarlos luego en la visualizacion
+*/
+
 		$url = "http://datos.labmde.org/api.php?identificador={$id}";
 		$JSON = file_get_contents($url);
 		$data = json_decode($JSON);
@@ -51,6 +57,9 @@
 		<header id="header" class="cabezote">
 		</header><!-- /header -->
 		<section>
+
+<!-- Seccion de la visualizacion -->
+
 			<div class="mensajes-historial">
 				<?php $aux = 1; foreach ($mensajes as $mensaje): if($aux == 4): break; endif; ?>			
 				<div id="mensaje_<?php echo $aux ?>" class="mensaje">
