@@ -61,7 +61,7 @@
 <!-- Seccion de la visualizacion -->
 
 			<div class="mensajes-historial">
-				<?php $aux = 1; foreach ($mensajes as $mensaje): if($aux == 4): break; endif; ?>			
+				<?php $aux = 0; foreach ($mensajes as $mensaje): if($aux == 4): break; endif; ?>			
 				<div id="mensaje_<?php echo $aux ?>" class="mensaje">
 					<span class="autor">Reseña de: <?php echo (isset($mensaje['libro'])) ? $mensaje['libro'] : 'Anónimo' ?></span>
 					<p><?php echo (isset($mensaje['mensaje'])) ? $mensaje['mensaje'] : 'No tengo ningún mensaje.' ?></p>
